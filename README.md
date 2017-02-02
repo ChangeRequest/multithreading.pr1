@@ -1,48 +1,25 @@
-Boilerplate project
+Multithreading Practice Task 1
 ===============
-This project is a ready-to use boilerplate for "It's not a bug, It's a feature" Java course.
 
-#### How-to use
+Readers-Writers
+---------------
 
-1. `git clone https://github.com/ChangeRequest/boilerplate-project.git name_of_new_project`
-2. `git remote remove origin`
-3. `git remote add origin https://github.com/new_repo/name_of_new_project.git`
-4. Update project name in `settings.gradle`
-5. Update `README.MD` to match newly created repository.
-6. Update Author name in `LICENSE` (if needed)
-7. Continue working in your new ready-to-use repository.
+Create class **Storage**, which contains array with 10 000 000 integers.
+Class should contain two methods: 
+* Calculate sum of integers
+* Generate and fill array with new 10 000 000 integers 
 
-####Already configured parts
+Create class **Reader**, that should calculate sum of integers of the **Storage** and print it once in 0-3 seconds.
 
-* Travis-CI configuration file
-* .gitignore file
-* build.gradle (already contains all needed imports)
-* License file with `Apache License Version 2.0`
-* empty package in src folder (`school.lemon.changerequest.java`)
+Create class **Writer**, that fill **Storage** with new integers once in 0-5 seconds.
 
-#### Travis-CI configuration
-* Oracle JDK 8
-* Install step: `gradlew clean assemble`
-* Check step: `gradlew check`
+Create 4 **Readers** that simultaneously prints sum.
 
-#### .gitignore
-Already configured to ignore most of unwonted stuff:
-* eclipse ignores
-* IDEA ignores
-* Java and Groovy ignores
-* gradle and maven ignores
-* etc.
+Create 2 **Writers** that simultaneously fill **Storage** with new integers.
 
-#### build.gradle
-* group is `school.lemon.changerequest.java`
-* applied module from [gradle_common project]:
-  * commonModule
-  * javaModule
-  * testModule
-  * idea
-  * eclipse
-
-
-  
-[gradle_common project]: https://github.com/ChangeRequest/gradle_common
+There should be following restrictions:
+1) **0-4** readers and **0** writers can work with storage at the one moment of time (all writers should wait until 
+readers will finish work)
+2) **0** readers and the only **1** writer can work with storage at the one moment of time (all readers and other 
+writers should wait until this writer will finish work)
 
