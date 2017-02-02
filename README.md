@@ -18,8 +18,6 @@ Create 4 **Readers** that simultaneously prints sum.
 Create 2 **Writers** that simultaneously fill **Storage** with new integers.
 
 There should be following restrictions:
-1) **0-4** readers and **0** writers can work with storage at the one moment of time (all writers should wait until 
-readers will finish work)
-2) **0** readers and the only **1** writer can work with storage at the one moment of time (all readers and other 
-writers should wait until this writer will finish work)
+* **0-4** readers and **0** writers can work with storage at the one moment of time (all writers should wait until readers will finish work)
+* **0** readers and the only **1** writer can work with storage at the one moment of time (all readers and other writers should wait until this writer will finish work)
 
